@@ -1,3 +1,6 @@
 from django.db import models
 
-# Create your models here.
+class Task(models.Model):
+	title = models.CharField(max_length=200)
+	date_set = models.DateTimeField('date set')
+	summary = models.CharField(max_length=200)
