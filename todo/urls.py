@@ -24,4 +24,5 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     path('', tasks.views.home, name='home'),
+    path('tasks/', include('tasks.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
