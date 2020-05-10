@@ -1,4 +1,7 @@
 from django.shortcuts import render
 
+from .models import Task
+
 def home(request):
-	return render(request, 'tasks/home.html')
+	tasks = Task.objects
+	return render(request, 'tasks/home.html', {'tasks':tasks})
