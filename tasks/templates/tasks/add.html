@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container pt-5">
+  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">New Task</h1>
+    <p class="lead">Let's setup a new task</p>
+  </div>
+</div>
+
+<div class="container text-center">
+
+{% if error %}
+
+{{ error }}
+<br />
+<br />
+{% endif %}
+
+</div>
+
+<div class="container text-center">
+
+<form method="POST" action="{% url 'add' %}" enctype="multipart/form-data">
+
+  {% csrf_token %}
+  Title:
+  <br />
+  <input type="text" name="title"/>
+  <br />
+  Description:
+  <br />
+  <input type="textbox" name="description"/>
+  <br />
+  <br />
+  <input class="btn btn-primary" type="submit" value="Add Task">
+
+</form>
+
+</div>
+
+{% endblock %}
